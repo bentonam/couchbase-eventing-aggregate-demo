@@ -1,0 +1,14 @@
+*.apdisk
+*.ap_
+*.log
+*.DS_Store
+*.bak
+*.TemporaryItems
+dist/
+Thumbs.db
+node_modules/
+.nyc*
+coverage/
+docs-public
+*.pdf
+test/reports

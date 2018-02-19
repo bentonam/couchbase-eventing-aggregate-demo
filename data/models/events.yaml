@@ -1,0 +1,38 @@
+name: Events
+type: object
+key: _id
+properties:
+  _id:
+    type: string
+    description: The document id
+    data:
+      post_build: "`event::${this.event_id}`"
+  _type:
+    type: string
+    description: The document type
+    data:
+      value: event
+  event_id:
+    type: string
+    description: The event id
+    data:
+      build: |
+        return faker.random.uuid()
+  event_name:
+    type: string
+    description: The event name
+    data:
+      build: |
+        return chance.sentence({ words: chance.integer({ min: 4, max: 10 }) })
+  event_date:
+    type: string
+    description: The event date
+    data:
+      build: |
+        return faker.date.between('2016-01-01', '2020-12-31').toISOString()
+  attendees:
+    type: integer
+    description: The number of attendees for the event
+    data:
+      build: |
+        return chance.integer({ min: 2, max: 100 })
